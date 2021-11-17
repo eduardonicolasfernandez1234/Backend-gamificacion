@@ -1,1 +1,0 @@
-from .timestampedmodel import TimeStampedModel

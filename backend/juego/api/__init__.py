@@ -1,0 +1,17 @@
+from .extra_serializer import PreguntaSimpleSerializer, OpcionPreguntaSimpleSerializer, ModoJuegoSimpleSerializer
+from .juego_viewset import JuegoSerializer, JuegoViewSet
+from .modo_juego_viewset import ModoJuegoSerializer, ModoJuegoViewSet
+from .nivel_viewset import NivelSerializer, NivelViewSet
+from .pregunta_viewset import PreguntaSerializer, PreguntaViewSet
+from .opcion_pregunta import OpcionPreguntaSerializer, OpcionPreguntaViewSet
+from .logro_viewset import LogroSerializer, LogroViewSet
+from .estatus_viewset import EstatusSerializer, EstatusViewSet
+from .canjeo_viewset import CanjeoSerializer, CanjeoViewSet
+from .producto_canjeo_viewset import ProductoCanjeoSerializer, ProductoCanjeoViewSet
+from .premio_viewset import PremioSerializer, PremioViewSet
+from .articulo_viewset import ArticuloSerializer, ArticuloViewSet
+from .imagen_pagina_viewset import ImagenPaginaSerializer, ImagenPaginaViewSet
+from .dato_curioso_viewset import DatoCuriosoSerializer, DatoCuriosoViewSet
+from .categoria_puzzle_viewset import CategoriaPuzzleSerializer, CategoriaPuzzleViewSet
+from .imagen_puzzle_viewset import ImagenPuzzleSerializer, ImagenPuzzleViewSet
+from .subimagen_puzzle_viewset import SubImagenPuzzleSerializer, SubImagenPuzzleViewSet
