@@ -21,24 +21,24 @@ class CategoriaPuzzleViewSet(viewsets.ModelViewSet):
     serializer_class = CategoriaPuzzleSerializer
 
 
-    # @action(detail=True, methods=['get'], url_path="preguntas",
-    #         name="Obtener lista de imagenes de juego por categoria")
-    # def listar_preguntas_por_modo_juego(self, request, pk=None):
-    #     if pk is None:
-    #         return Response({
-    #             "detalle": "Falta la llave foránea",
-    #             "status_code": 404
-    #         }, status=status.HTTP_404_NOT_FOUND)
-    #     try:
-    #         ModoJuego.objects.get(id=pk)
-    #     except ModoJuego.DoesNotExist:
-    #         return Response({
-    #             "detalle": "No se encontro.",
-    #             "status_code": 404
-    #         }, status=status.HTTP_404_NOT_FOUND)
-    #     from juego.models import Pregunta
-    #     from juego.api import PreguntaSimpleSerializer
+    @action(detail=True, methods=['get'], url_path="imagenes",
+            name="Obtener lista de imagenes de juego por categoria")
+    def listar_imagenes_por_categoria(self, request, pk=None):
+        if pk is None:
+            return Response({
+                "detalle": "Falta la llave foránea",
+                "status_code": 404
+            }, status=status.HTTP_404_NOT_FOUND)
+        try:
+            CategoriaPuzzle.objects.get(id=pk)
+        except CategoriaPuzzle.DoesNotExist:
+            return Response({
+                "detalle": "No se encontro.",
+                "status_code": 404
+            }, status=status.HTTP_404_NOT_FOUND)
+        from juego.models import ImagenPuzzle
+        from juego.api import ImagenPuzzleSerializer
 
-    #     queryset = Pregunta.objects.filter(modo_juego_id=pk)
-    #     serializer = PreguntaSimpleSerializer(queryset, many=True, read_only=True)
-    #     return Response(serializer.data)
+        queryset = ImagenPuzzle.objects.filter(categoria_id=pk)
+        serializer = ImagenPuzzleSerializer(queryset, many=True, read_only=True)
+        return Response(serializer.data)
